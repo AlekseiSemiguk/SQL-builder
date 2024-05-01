@@ -19,7 +19,7 @@ class Database implements DatabaseInterface
     public function buildQuery(string $query, array $args = []): string
     {
         if (!defined('USE_PDO')) {
-            define('USE_PDO', 1);
+            define('USE_PDO', 0);
         }
         $queryString = new QueryString($this->mysqli, $query);
         $queryString->bindArguments($args);
